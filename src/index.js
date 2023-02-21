@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom'
+import { RecoilRoot } from 'recoil'
+import { ThemeProvider } from '@material-ui/core/styles'
+import theme from './Components/theme'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './index.css';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+    <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+    </BrowserRouter>
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
 );
