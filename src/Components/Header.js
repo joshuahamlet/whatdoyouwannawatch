@@ -161,8 +161,10 @@ const Header = () => {
                 }}
               >
                 <div style={{ marginBottom: '2rem' }}>Sign in with</div>
-                <div style={{display: "flex", alignItems: "center"}}>
-                  <GoogleIcon style={{ fontSize: '1.5rem', marginRight: "0.5rem" }} />
+                <div style={{ display: 'flex', alignItems: 'center', border: "0.25rem solid var(--gray2)", borderColor: "var(--gray2)", padding: "0.5rem", borderRadius: "1rem", boxShadow: "inset -.25rem -.25rem .55rem #bdbdbd"}}>
+                  <GoogleIcon
+                    style={{ fontSize: '1.5rem', marginRight: '0.5rem' }}
+                  />
                   <a href='/auth/google'>Google</a>
                 </div>
               </div>

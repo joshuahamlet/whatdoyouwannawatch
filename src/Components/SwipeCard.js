@@ -166,8 +166,10 @@ const SwipeCard = () => {
                   style={{zIndex: "1"}}
                   onSwipe={(dir) => onSwipe(dir, movie)} 
                   onCardLeftScreen={() => onCardLeftScreen(movie.title)} 
-                  preventSwipe={['down']}>
-        
+                  preventSwipe={["down"]}
+                  swipeRequirementType='position'
+                    >
+                  
                     <div style={{backgroundImage: `url(${movie.largeimage})`}} className="card">
         
                     </div>

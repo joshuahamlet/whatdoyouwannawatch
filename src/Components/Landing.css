@@ -1,0 +1,10 @@
+@media screen and (max-width: 780px) {
+  .landingContainer {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .welcomeContainer {
+    transform: translate(-3.5rem, -8rem)
+  }
+}

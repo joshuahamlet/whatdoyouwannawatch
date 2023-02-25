@@ -1,0 +1,12 @@
+.movAnim {
+  width: 24rem;
+  height: 24rem;
+}
+
+@media screen and (max-width: 780px) {
+  .movAnim {
+    width: 12rem;
+    height: 12rem;
+    transform: translate(7.25rem, -.75rem);
+  }
+}

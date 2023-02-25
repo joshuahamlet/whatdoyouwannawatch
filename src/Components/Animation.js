@@ -1,6 +1,7 @@
 import React from "react";
 import Lottie from "react-lottie";
 import animationData from "../lottie/movieAnim1.json";
+import './Animation.css'
 
 const defaultOptions = {
   loop: true,
@@ -13,8 +14,8 @@ const defaultOptions = {
 
 function Animation() {
   return (
-    <div>
-      <Lottie options={defaultOptions} height={400} width={400} />
+    <div className="movAnim" > 
+      <Lottie options={defaultOptions} />
     </div>
   );
 }
