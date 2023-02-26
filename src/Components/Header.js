@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import MovieIcon from '@material-ui/icons/Movie'
+import { MdSwipe, MdLogout } from 'react-icons/md'
+import { FaUserFriends } from 'react-icons/fa'
 import createSvgIcon from '@material-ui/icons/utils/createSvgIcon'
 import './Header.css'
 import { Link } from 'react-router-dom'
@@ -123,20 +125,51 @@ const Header = () => {
         <MovieIcon style={{ fontSize: '70px' }} />
       </Link>
 
-      {!currentUser.loading && <Link to='/startswiping'>Swipe</Link>}
-      {!currentUser.loading && <Link to='/matches'>Matches</Link>}
+      {!currentUser.loading && (
+        <Link to='/startswiping'>
+          <div style={{ display: 'flex' }}>
+            <MdSwipe className='navIcon' style={{ marginRight: '.25rem' }} />
+            <div className='navText'>Swipe</div>
+          </div>
+        </Link>
+      )}
+      {!currentUser.loading && (
+        <Link to='/matches'>
+          <div style={{ display: 'flex' }}>
+            <FaUserFriends
+              className='navIcon'
+              style={{ transform: 'translateY(0.1rem)', marginRight: '.25rem' }}
+            />
+            <div className='navText'>Matches</div>
+          </div>
+        </Link>
+      )}
 
       {currentUser.loading ? (
-        <div style={{ cursor: 'pointer' }} onClick={handleOpen}>
-          Login
+        <div style={{ cursor: 'pointer',  }} onClick={handleOpen}>
+          <div>Login</div>
         </div>
       ) : (
-        <div style={{ cursor: 'pointer' }} onClick={handleLogout}>
-          Logout
+        <div style={{ display: 'flex' }}>
+          <div
+            className='navText'
+            style={{ cursor: 'pointer' }}
+            onClick={handleLogout}
+          >
+          <MdLogout
+            className='navIcon'
+            style={{ transform: 'translateY(0.2rem)', marginRight: '.25rem' }}
+          />
+            Logout
+          </div>
         </div>
       )}
 
-      {currentUser ? <div>{currentUser.username}</div> : ' '}
+      {currentUser ? (
+        <div className='userName'>{currentUser.username}</div>
+      ) : (
+        ' '
+      )}
 
       {open ? (
         <>
@@ -161,7 +194,17 @@ const Header = () => {
                 }}
               >
                 <div style={{ marginBottom: '2rem' }}>Sign in with</div>
-                <div style={{ display: 'flex', alignItems: 'center', border: "0.25rem solid var(--gray2)", borderColor: "var(--gray2)", padding: "0.5rem", borderRadius: "1rem", boxShadow: "inset -.25rem -.25rem .55rem #bdbdbd"}}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    border: '0.25rem solid var(--gray2)',
+                    borderColor: 'var(--gray2)',
+                    padding: '0.5rem',
+                    borderRadius: '1rem',
+                    boxShadow: 'inset -.25rem -.25rem .55rem #bdbdbd',
+                  }}
+                >
                   <GoogleIcon
                     style={{ fontSize: '1.5rem', marginRight: '0.5rem' }}
                   />

@@ -16,7 +16,7 @@ const Landing = () => {
           marginRight: "2rem",
         }}
       >
-        <div style={{ height: '400px', width: '400px' }}>
+        <div className="blobContainer" style={{ height: '400px', width: '400px' }}>
           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>
             <path
               fill='#830908'
