@@ -146,22 +146,27 @@ const Header = () => {
       )}
 
       {currentUser.loading ? (
-        <div style={{ cursor: 'pointer',  }} onClick={handleOpen}>
+        <div
+          style={{
+            width: '100%',
+            cursor: 'pointer',
+            textAlign: 'right',
+            fontSize: '2rem',
+          }}
+          onClick={handleOpen}
+        >
           <div>Login</div>
         </div>
       ) : (
-        <div style={{ display: 'flex' }}>
-          <div
-            className='navText'
-            style={{ cursor: 'pointer' }}
-            onClick={handleLogout}
-          >
+        <div
+          style={{ display: 'flex', cursor: 'pointer' }}
+          onClick={handleLogout}
+        >
           <MdLogout
             className='navIcon'
             style={{ transform: 'translateY(0.2rem)', marginRight: '.25rem' }}
           />
-            Logout
-          </div>
+          <div className='navText'>Logout</div>
         </div>
       )}
 
