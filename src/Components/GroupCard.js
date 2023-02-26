@@ -65,8 +65,10 @@ export default function GroupCard() {
 
   return (
     <div className={classes.root} style={{maxWidth: "600px", minWidth: "307px", width: "100vw"}}>
+        <div style={{padding: "1rem", borderRadius: ".25rem", backgroundColor: "#7B7C7C", color: "#EDEDEB", marginBottom: "10px"}}>
+          WIP area for chats and coordinating viewing parties.
+        </div>
       <Card style={{backgroundColor: "#7B7C7C", color: "#EDEDEB", marginBottom: "10px"}}>  
-
         <List style={{width: "100%"}} component="div" aria-label="main mailbox folders">
             <ListItem >
                 <Avatar onDoubleClick={test} style={{paddingRight: "5px"}} variant="rounded" src={movieImg1} />
@@ -135,12 +137,15 @@ export default function GroupCard() {
         </List>
         
       </Card>
+      {/*
+
       <Modal
-        open={'open'}
+        open={'handleOpen'}
         onClose={'handleClose'}
       >
         howdy
        </Modal>
+*/}
     </div>
   );
 }
