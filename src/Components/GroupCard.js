@@ -14,7 +14,7 @@ import EventIcon from '@material-ui/icons/Event';
 
 //SOCKETSOCKETSOCKETSOCKETSOCKETSOCKETSOCKETSOCKET//
 import io from 'socket.io-client'
-const socket = io('http://localhost:4000/')
+const socket = io('https://whatdoyouwannawatchbackend.fly.dev')
 
 socket.on("connect", () => {
     console.log('howdy')

@@ -69,13 +69,13 @@ export default function MovieCard() {
     compare()
   }, [userFriends])
 
-  useEffect(() => {
-    console.log("movieMATCHES", movieMatches)
-  }, [movieMatches])
+ // useEffect(() => {
+ //   console.log("movieMATCHES", movieMatches)
+ // }, [movieMatches])
 
-  useEffect(() => {
-    console.log("CURRENTUSER", currentUser)
-  }, [currentUser])
+ // useEffect(() => {
+ //   console.log("CURRENTUSER", currentUser)
+ // }, [currentUser])
 
   const movieList = () => {
     return(

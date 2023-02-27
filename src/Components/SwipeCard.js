@@ -40,7 +40,7 @@ const SwipeCard = () => {
     const [swipeCount, setSwipeCount] = useState(0)
 
     const loadMoreData = async () => {
-      const response = await fetch("/movies", {mode: "cors", headers: {"Access-Control-Allow-Headers": "*"}})
+      const response = await fetch("https://whatdoyouwannawatchbackend.fly.dev/movies", {method: "GET", credentials: "include"})
       const data = await response.json()
       setMovieSample(data)
     }
@@ -48,7 +48,7 @@ const SwipeCard = () => {
 
     useEffect(() => {
       const loadData = async() => {
-        const response = await fetch("/movies/getbatch", {mode: "cors", headers: {"Access-Control-Allow-Headers": "*"}})
+        const response = await fetch("https://whatdoyouwannawatchbackend.fly.dev/movies/getbatch", {method: "GET", credentials: "include"})
         const data = await response.json()
         setMovieSample(data)
       }

@@ -82,7 +82,7 @@ const Header = () => {
   const handleLogout = async () => {
     setCurrentUser({ loading: true })
     //CHECK AFTER FIXING CURRENT USER API
-    const res = await fetch('/api/logout', {
+    const res = await fetch('https://whatdoyouwannawatchbackend.fly.dev/api/current_user/api/logout', {
       mode: 'cors',
       headers: { 'Access-Control-Allow-Headers': '*' },
     })
@@ -100,9 +100,9 @@ const Header = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch('/api/current_user', {
-          mode: 'cors',
-          headers: { 'Access-Control-Allow-Headers': '*' },
+        const response = await fetch('https://whatdoyouwannawatchbackend.fly.dev/api/current_user', {
+          method: 'GET',
+          credentials: 'include' 
         })
         const data = await response.json()
         if (data.currentUser) {
@@ -213,7 +213,7 @@ const Header = () => {
                   <GoogleIcon
                     style={{ fontSize: '1.5rem', marginRight: '0.5rem' }}
                   />
-                  <a href='/auth/google'>Google</a>
+                  <a href='https://whatdoyouwannawatchbackend.fly.dev/auth/google'>Google</a>
                 </div>
               </div>
             </motion.div>
